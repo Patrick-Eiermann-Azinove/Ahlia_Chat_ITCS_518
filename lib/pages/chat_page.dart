@@ -162,7 +162,7 @@ class ChatPageState extends State<ChatPage> {
                 ? Container(
                     child: Text(
                       messageChat.content,
-                      style: TextStyle(color: ColorConstants.whiteColor
+                      style: TextStyle(color: Colors.black
                       ),
                     ),
                     padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
@@ -430,8 +430,9 @@ class ChatPageState extends State<ChatPage> {
       appBar: AppBar(
         title: Text(
           this.widget.arguments.peerNickname,
-          style: TextStyle(color: ColorConstants.primaryColor),
+          style: TextStyle(color: ColorConstants.whiteColor),
         ),
+        backgroundColor: Color(0xffba160c),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -469,27 +470,27 @@ class ChatPageState extends State<ChatPage> {
             Row(
               children: <Widget>[
                 TextButton(
-                  onPressed: () => onSendMessage('mimi1', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif1', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi1.gif',
+                    'images/gif1.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi2', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif2', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi2.gif',
+                    'images/gif2.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi3', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif3', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi3.gif',
+                    'images/gif3.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -501,27 +502,27 @@ class ChatPageState extends State<ChatPage> {
             Row(
               children: <Widget>[
                 TextButton(
-                  onPressed: () => onSendMessage('mimi4', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif4', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi4.gif',
+                    'images/gif4.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi5', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif5', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi5.gif',
+                    'images/gif5.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi6', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif6', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi6.gif',
+                    'images/gif6.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
@@ -533,27 +534,27 @@ class ChatPageState extends State<ChatPage> {
             Row(
               children: <Widget>[
                 TextButton(
-                  onPressed: () => onSendMessage('mimi7', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif7', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi7.gif',
+                    'images/gif7.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi8', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif8', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi8.gif',
+                    'images/gif8.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,
                   ),
                 ),
                 TextButton(
-                  onPressed: () => onSendMessage('mimi9', TypeMessage.sticker),
+                  onPressed: () => onSendMessage('gif9', TypeMessage.sticker),
                   child: Image.asset(
-                    'images/mimi9.gif',
+                    'images/gif9.gif',
                     width: 50,
                     height: 50,
                     fit: BoxFit.cover,

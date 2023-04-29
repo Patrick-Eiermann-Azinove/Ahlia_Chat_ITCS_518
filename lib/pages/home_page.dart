@@ -121,8 +121,8 @@ class HomePageState extends State<HomePage> {
 
   void showNotification(RemoteNotification remoteNotification) async {
     AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
-      Platform.isAndroid ? 'com.dfa.ahliachat' : 'com.duytq.ahliachat',
-      'Flutter chat demo',
+      Platform.isAndroid ? 'com.ahlia.ahlia_chat' : 'com.duytq.ahliachat',
+      'Ahlia Chat',
       playSound: true,
       enableVibration: true,
       importance: Importance.max,
