@@ -1,4 +1,4 @@
-package com.dfa.ahliachat;
+package com.ahlia.ahlia_chat;
 
 import io.flutter.embedding.android.FlutterActivity;
 
