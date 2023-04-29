@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1083165453758",
+    "project_id": "ahlia-chat-c4a64",
+    "storage_bucket": "ahlia-chat-c4a64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083165453758:android:e5657be22a51b733f21def",
+        "android_client_info": {
+          "package_name": "com.ahlia.ahlia_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1083165453758-eq0728ir0fn0osacu0eujspsfcq1v1aa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnDlKDc0oBiek0BUN4-t2TgqGuwmk5HJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1083165453758-dvkkpqgdd81070m6u9lasg5f3p9qvrnr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1083165453758-f19brj39frin307li9u771u2defuv7i1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ahlia.chat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
