@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:ahlia_chat/constants/constants.dart';
 import 'package:ahlia_chat/providers/providers.dart';
 import 'package:ahlia_chat/utils/utils.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
@@ -27,7 +25,6 @@ class HomePageState extends State<HomePage> {
   HomePageState({Key? key});
 
   final FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   final GoogleSignIn googleSignIn = GoogleSignIn();
   final ScrollController listScrollController = ScrollController();
 
@@ -60,8 +57,6 @@ class HomePageState extends State<HomePage> {
         (Route<dynamic> route) => false,
       );
     }
-    registerNotification();
-    configLocalNotification();
     listScrollController.addListener(scrollListener);
   }
 
@@ -69,37 +64,6 @@ class HomePageState extends State<HomePage> {
   void dispose() {
     super.dispose();
     btnClearController.close();
-  }
-
-  void registerNotification() {
-    firebaseMessaging.requestPermission();
-
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('onMessage: $message');
-      if (message.notification != null) {
-        showNotification(message.notification!);
-      }
-      return;
-    });
-
-    firebaseMessaging.getToken().then((token) {
-      print('push token: $token');
-      if (token != null) {
-        homeProvider.updateDataFirestore(FirestoreConstants.pathUserCollection, currentUserId, {'pushToken': token});
-      }
-    }).catchError((err) {
-      Fluttertoast.showToast(msg: err.message.toString());
-    });
-  }
-
-  void configLocalNotification() {
-    AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('app_icon');
-    DarwinInitializationSettings initializationSettingsIOS = DarwinInitializationSettings();
-    InitializationSettings initializationSettings = InitializationSettings(
-      android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
-    );
-    flutterLocalNotificationsPlugin.initialize(initializationSettings);
   }
 
   void scrollListener() {
@@ -117,32 +81,6 @@ class HomePageState extends State<HomePage> {
     } else {
       Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()));
     }
-  }
-
-  void showNotification(RemoteNotification remoteNotification) async {
-    AndroidNotificationDetails androidPlatformChannelSpecifics = AndroidNotificationDetails(
-      Platform.isAndroid ? 'com.ahlia.ahlia_chat' : 'com.duytq.ahliachat',
-      'Ahlia Chat',
-      playSound: true,
-      enableVibration: true,
-      importance: Importance.max,
-      priority: Priority.high,
-    );
-    DarwinNotificationDetails iOSPlatformChannelSpecifics = DarwinNotificationDetails();
-    NotificationDetails platformChannelSpecifics = NotificationDetails(
-      android: androidPlatformChannelSpecifics,
-      iOS: iOSPlatformChannelSpecifics,
-    );
-
-    print(remoteNotification);
-
-    await flutterLocalNotificationsPlugin.show(
-      0,
-      remoteNotification.title,
-      remoteNotification.body,
-      platformChannelSpecifics,
-      payload: null,
-    );
   }
 
   Future<bool> onBackPress() {
